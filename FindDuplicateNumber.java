@@ -25,7 +25,7 @@
 // 1 <= nums[i] <= n
 // All the integers in nums appear only once except for precisely one integer which appears two or more times.
 
-
+// Cycle Detection method
 class Solution {
     public int findDuplicate(int[] nums) {
         int slow = nums[0];
@@ -44,3 +44,24 @@ class Solution {
         return slow;
     }
 }
+
+
+// Negative marking
+class Solution {
+    public int findDuplicate(int[] nums) {
+        int n = nums.length;
+        for (int num:nums) {
+            int idx = Math.abs(num);
+            if(nums[idx] < 0) {
+                return idx;
+            }
+            else {
+                nums[idx] = -nums[idx];
+            }
+        }
+        return n;
+    }
+}
+
+// Time Complexity: O(n)
+// Space Complexity: O(1)
