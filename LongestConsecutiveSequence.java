@@ -44,3 +44,37 @@ class Solution {
         return longest;
     }
 }
+
+// Time Complexity: O(n)
+// Space Complexity: O(n)
+
+
+/* // soluting by sorting
+
+class Solution {
+    public int longestConsecutive(int[] nums) {
+
+        if (nums.length == 0) return 0;
+
+        Arrays.sort(nums);
+        int maxCount = 1;
+        int currentCount = 1;
+
+        for (int i=1; i<nums.length; i++) {
+            if (nums[i] == nums[i-1]) {
+                continue;
+            }
+            else if (nums[i] == nums[i-1]+1) {
+                currentCount++;
+            }
+            else {
+                maxCount = Math.max(maxCount, currentCount);
+                currentCount = 1;
+            }
+        }
+        return Math.max(maxCount, currentCount);
+    }
+}
+
+// Time Complexity: O(n log n)
+// Space Complexity: O(1) */
