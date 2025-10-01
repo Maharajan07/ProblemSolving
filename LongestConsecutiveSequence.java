@@ -23,7 +23,8 @@
 // 0 <= nums.length <= 105
 // -109 <= nums[i] <= 109
 
-class Solution {
+import java.util.*;
+class longestConsecutive {
     public int longestConsecutive(int[] nums) {
         Set <Integer> seen = new HashSet<>();
         for (int num:nums) {
