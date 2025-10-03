@@ -68,3 +68,24 @@ public class ValidPalindrome {
         }
     }
 }
+
+/* // method -2
+class Solution {
+    public boolean isPalindrome(String s) {
+        s = s.replaceAll("[^a-zA-Z0-9]", "").toLowerCase().trim();
+        int i = 0;
+        int j = s.length()-1;
+
+        while (i < j) {
+            if (s.charAt(i) != s.charAt(j)) {
+                return false;
+            }
+            i++;
+            j--;
+        }
+        return true;
+    }
+} */
+
+// Time Complexity: O(n)
+// Space Complexity: O(1)
