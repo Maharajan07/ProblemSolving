@@ -1,3 +1,6 @@
+
+import java.util.Scanner;
+
 /* 414. Third Maximum Number
 
 Given an integer array nums, return the third distinct maximum number in this array. If the third maximum does not exist, return the maximum number.
@@ -55,6 +58,23 @@ class ThirdMax {
             }
         }
         return third == null ? first.intValue() : third.intValue();
+    }
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter array size: ");
+        int n = sc.nextInt();
+
+        int[] arr = new int[n];
+        System.out.println("Enter values: ");
+        for (int i=0; i<n; i++) {
+            arr[i] = sc.nextInt();
+        }
+
+        ThirdMax obj = new ThirdMax();
+        System.out.println("Third Max: " + obj.thirdMax(arr));
     }
 }
 
