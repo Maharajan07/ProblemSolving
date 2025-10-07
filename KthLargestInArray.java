@@ -43,3 +43,40 @@ class KthLargestInArray {
 
 // Time Complexity: O(n²)
 // Space Complexity: O(1)
+
+
+
+
+/* // Method -2
+
+class Solution {
+    public int findKthLargest(int[] nums, int k) {
+        PriorityQueue<Integer> minHeap = new PriorityQueue<>();
+
+        for (int n:nums) {
+            minHeap.add(n);
+            if (minHeap.size() > k) {
+                minHeap.poll();
+            }
+        }
+        return minHeap.peek();
+    }
+}
+
+// Time Complexity: O(n log k)
+// Space Complexity: O(k) */
+
+
+
+
+/* // Method -3(sorting)
+
+class Solution {
+    public int findKthLargest(int[] nums, int k) {
+        Arrays.sort(nums);
+        return nums[nums.length - k];
+    }
+}
+
+// Time Complexity: O(n log n)
+// Space Complexity: O(1) */
