@@ -28,16 +28,15 @@ Output: 17 */
 
 class RichestCustomerWealth {
     public int maximumWealth(int[][] accounts) {
-        int count = 0;
         int rich = 0;
         for (int i=0; i<accounts.length; i++) {
+            int count = 0;
             for (int j=0; j<accounts[i].length; j++) {
                 count += accounts[i][j];
             }
             if (count > rich) {
                 rich = count;
             }
-            count = 0;
         }
         return rich;
     }
@@ -45,3 +44,21 @@ class RichestCustomerWealth {
 
 // Time Complexity: O(m*n)
 // Space Complexity: O(1)
+
+
+// Cleaner way:
+
+/* class Solution {
+    public int maximumWealth(int[][] accounts) {
+        int rich = 0;
+        for (int[] customer : accounts) {
+            int sum = 0;
+            for (int money : customer) {
+                sum += money;
+            }
+            // if (sum > rich) rich = sum;
+            rich = Math.max(rich, sum);
+        }
+        return rich;
+    }
+} */
