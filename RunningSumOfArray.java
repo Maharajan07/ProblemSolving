@@ -33,7 +33,8 @@ class RunningSumOfArray {
 // Space Complexity: O(1)
 
 
-/* 
+/* // Method -2
+
 class Solution {
     public int[] runningSum(int[] nums) {
         int[] sum = new int[nums.length];
