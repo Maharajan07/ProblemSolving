@@ -22,7 +22,7 @@ Output: 12
 Explanation: The permutation difference between s and t is equal to |0 - 3| + |1 - 2| + |2 - 4| + |3 - 1| + |4 - 0| = 12. */
 
 
-class PermutationOfTwoStrings {
+class PermutationDiffTwoStrings {
     public int findPermutationDifference(String s, String t) {
         int sum = 0;
         for (int i=0; i<s.length(); i++) {
