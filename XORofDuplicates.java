@@ -36,3 +36,28 @@ class XORofDuplicates {
 
 // Time Complexity: O(n²)
 // Space Complexity: O(1)
+
+
+
+/* // method -2
+
+class Solution {
+    public int duplicateNumbersXOR(int[] nums) {
+        Set<Integer> seen = new HashSet<>();
+        Set<Integer> dup = new HashSet<>();
+
+        for (int n:nums) {
+            if (!seen.add(n))
+                dup.add(n);
+        }
+
+        int res = 0;
+        for (int d:dup)
+            res ^= d;
+
+        return res;
+    }
+}
+
+// Time Complexity: O(n)
+// Space Complexity: O(n) */
