@@ -26,7 +26,7 @@ Constraints:
 Each element in the array appears twice except for one element which appears only once.*/
 
 
-class Solution {
+class SingleNumber {
     public int singleNumber(int[] nums) {
         int index=0;
         for (int i=0; i<nums.length; i++){
@@ -35,3 +35,27 @@ class Solution {
         return index;
     }
 }
+
+// Time Complexity: O(n)
+// Space Complexity: O(1)
+
+
+/* // Brute Force
+class Solution {
+    public int singleNumber(int[] nums) {
+        for (int i=0; i<nums.length; i++) {
+            boolean found = false;
+            for (int j=0; j<nums.length; j++) {
+                if (i != j && nums[i] == nums[j]) {
+                    found = true;
+                    break;
+                }
+            }
+            if (!found) return nums[i];
+        }
+        return -1;
+    }
+}
+
+// Time Complexity: O(n²)
+// Space Complexity: O(1) */
