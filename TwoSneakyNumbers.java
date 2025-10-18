@@ -50,3 +50,27 @@ class TwoSneakyNumbers {
 
 // Time Complexity: O(n²)
 // Space Complexity: O(n)
+
+// method -2 (using hashset)
+
+class Solution {
+    public int[] getSneakyNumbers(int[] nums) {
+        Set<Integer> seen = new HashSet<>();
+        Set<Integer> duplicates= new HashSet<>();
+
+        for (int num:nums) {
+            if (!seen.add(num)) {
+                duplicates.add(num);
+            }
+        }
+        int[] res = new int[duplicates.size()];
+        int i=0;
+        for (int num:duplicates) {
+            res[i++] = num;
+        }
+        return res;
+    }
+}
+
+// Time Complexity: O(n)
+// Space Complexity: O(n)
