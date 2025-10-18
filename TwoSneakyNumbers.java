@@ -51,6 +51,33 @@ class TwoSneakyNumbers {
 // Time Complexity: O(n²)
 // Space Complexity: O(n)
 
+
+/* 
+// optimized solution
+
+class Solution {
+    public int[] getSneakyNumbers(int[] nums) {
+        int n = nums.length;
+        int[] freq = new int[n];
+        List<Integer> res = new  ArrayList<>();
+
+        for (int num:nums) {
+            freq[num]++;
+            if (freq[num] == 2) {
+                res.add(num);
+            }
+        }
+        
+        int[] ans = new int[res.size()];
+        for (int i=0; i<res.size(); i++) {
+            ans[i] = res.get(i);
+        }
+        return ans;
+    }
+} 
+*/
+
+/* 
 // method -2 (using hashset)
 
 class Solution {
@@ -73,4 +100,4 @@ class Solution {
 }
 
 // Time Complexity: O(n)
-// Space Complexity: O(n)
+// Space Complexity: O(n) */
