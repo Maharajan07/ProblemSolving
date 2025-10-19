@@ -34,3 +34,29 @@ class MajorityElement {
 
 // Time Complexity: O(n²)
 // Space Complexity: O(1)
+
+
+/* 
+// method -2 (Optimized using Boyer–Moore Voting Algorithm)
+class Solution {
+    public int majorityElement(int[] nums) {
+        int value = 0;
+        int count = 0;
+
+        for (int num:nums) {
+            if (count == 0) {
+                value = num;
+            }
+            if (value == num) {
+                count++;
+            }
+            else {
+                count--;
+            }
+        }
+        return value;
+    }
+}
+
+// Time Complexity: O(n)
+// Space Complexity: O(1) */
