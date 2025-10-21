@@ -18,11 +18,11 @@ Example 3:
 Input: n = 3
 Output: false */
 
-class Solution {
+class PowerOfTwo {
     public boolean isPowerOfTwo(int n) {
         if (n <= 0) return false;
 
-        for (int i=0; i<31; i++) {
+        for (int i=0; i<31; i++) {  // 2^30 < Integer.MAX_VALUE
             if (1<<i == n) {
                 return true;
             }
