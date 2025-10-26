@@ -26,7 +26,7 @@ Output: 4
 Explanation: only a single element of nums is greater than or equal to 9 so we need to apply the operations 4 times on nums. */
 
 
-class MaxOperations {
+class MinOperations {
     public int minOperations(int[] nums, int k) {
         int count = 0;
 
