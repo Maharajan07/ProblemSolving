@@ -1,94 +1,49 @@
-/* Given a number n, for each integer i in the range from 1 to n inclusive, print one value per line as follows:
+/* 412. Fizz Buzz
 
-If iis a multiple of both 3 and 5, print FizzBuzz.
-If iis a multiple of 3 (but not 5), print Fizz.
-If iis a multiple of 5 (but not 3), print Buzz.
-If iis not a multiple of 3 or 5, print the value of i.
+Given an integer n, return a string array answer (1-indexed) where:
 
-Function Description
-Complete the function fizzBuzz in the editor below.
+answer[i] == "FizzBuzz" if i is divisible by 3 and 5.
+answer[i] == "Fizz" if i is divisible by 3.
+answer[i] == "Buzz" if i is divisible by 5.
+answer[i] == i (as a string) if none of the above conditions are true.
+ 
+Example 1:
+Input: n = 3
+Output: ["1","2","Fizz"]
 
-fizzBuzz has the following parameter(s):
-int n: upper limit of values to test (inclusive)
+Example 2:
+Input: n = 5
+Output: ["1","2","Fizz","4","Buzz"]
 
-Returns: NONE
+Example 3:
+Input: n = 15
+Output: ["1","2","Fizz","4","Buzz","Fizz","7","8","Fizz","Buzz","11","Fizz","13","14","FizzBuzz"] */
 
-Prints: The function must print the appropriate response for each value i in the set {1, 2, ... n} in ascending order, each on a separate line.
 
-Constraints:
-0<n<2x105
+import java.util.ArrayList;
+import java.util.List;
 
-▼Input Format for Custom Testing
+class FizzBuzz {
+    public List<String> fizzBuzz(int n) {
+        List<String> res = new ArrayList<>();
 
-Input from stdin will be processed as follows and passed to the function.
-The single integer n, the limit of the range to test: [1, 2, ...n].
-
-▼ Sample Case 0
-
-Sample Input
-STDIN
-
-Function
-15 n = 15
-
-Sample Output
-
-1
-2
-Fizz
-4
-Buzz
-Fizz
-7
-8
-Fizz
-Buzz
-11
-Fizz
-13
-14
-FizzBuzz
-
-Explanation:
-
-The numbers 3, 6, 9, and 12 are multiples of 3 (but not 5), so print Fizz on those lines.
-The numbers 5 and 10 are multiples of 5 (but not 3), so print Buzz on those lines.
-The number 15 is a multiple of both 3 and 5, so print FizzBuzz on that line.
-None of the other values is a multiple of either 3 or 5, so print the value of i on those lines. */
-
-import java.io.*;
-
-class Result {
-
-   public static void fizzBuzz(int n) {
         for (int i=1; i<=n; i++) {
-            boolean divisibleBy3 = (i%3==0);
-            boolean divisibleBy5 = (i%5==0);
-            
-            if (divisibleBy3 && divisibleBy5) {
-                System.out.println("FizzBuzz");
-            } else if (divisibleBy3) {
-                System.out.println("Fizz");
-            } else if (divisibleBy5) {
-                System.out.println("Buzz");
-            } else {
-                System.out.println(i);
+            if (i%3 == 0 && i%5 != 0) {
+                res.add("Fizz");
+            }
+            else if (i%5 == 0 && i%3 != 0) {
+                res.add("Buzz");
+            }
+            else if (i%3 == 0 && i%5 == 0) {
+                res.add("FizzBuzz");
+            }
+            else {
+                res.add(String.valueOf(i));
             }
         }
-    
-
-    }
-
-}
-
-public class FizzBuzz {
-    public static void main(String[] args) throws IOException {
-        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-
-        int n = Integer.parseInt(bufferedReader.readLine().trim());
-
-        Result.fizzBuzz(n);
-
-        bufferedReader.close();
+        return res;
     }
 }
+
+// Time Complexity: O(n)
+// Space Complexity: O(n)
