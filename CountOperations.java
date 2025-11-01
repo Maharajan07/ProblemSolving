@@ -45,3 +45,28 @@ public class CountOperations {
 
 // Time Complexity: O(max(num1, num2))
 // Space Complexity: O(1)
+
+
+/* 
+// like Euclidean GCD algorithm
+
+class Solution {
+    public int countOperations(int num1, int num2) {
+        int count = 0;
+
+        while (num1 != 0 && num2 != 0) {
+            if (num1 >= num2) {
+                count += num1/num2;
+                num1 %= num2;
+            }
+            else {
+                count += num2/num1;
+                num2 %= num1;
+            }
+        }
+        return count;
+    }
+}
+
+// Time Complexity: O(log(min(num1, num2)))
+// Space Complexity: O(1) */
