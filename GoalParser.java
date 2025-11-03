@@ -45,5 +45,16 @@ public class GoalParser {
     }
 }
 
+
+/* 
+// using replace()
+
+class Solution {
+    public String interpret(String command) {
+        return command.replace("()", "o").replace("(al)", "al");
+    }
+}*/
+
+
 // Time Complexity: O(n)
 // Space Complexity: O(n)
