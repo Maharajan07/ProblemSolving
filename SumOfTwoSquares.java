@@ -12,7 +12,7 @@ Input: c = 3
 Output: false */
 
 
-public class SumOfSquares {
+public class SumOfTwoSquares {
     public boolean judgeSquareSum(int c) {
         int left = 0;
         int right = (int) Math.sqrt(c);
