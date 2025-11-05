@@ -28,5 +28,22 @@ public class SumOfSquares {
     }
 }
 
+/*
+// using Math Formula (a² + b² = c)
+
+class Solution {
+    public boolean judgeSquareSum(int c) {
+        for (int a=0; a*a<=c; a++) {
+            int b = (int) Math.sqrt(c - a*a);       // (b² = c - a²)
+
+            if (b*b == c-a*a) return true;
+        }
+        return false;
+    }
+}
+*/
+
+
+
 // Time Complexity: O(√c)
 // Space Complexity: O(1)
