@@ -38,3 +38,26 @@ public class JewelsInStones {
 
 // Time Complexity: O(m + n)
 // Space Complexity: O(m)   -> (for set of jewels)
+
+
+/* 
+// Brute-force
+
+class Solution {
+    public int numJewelsInStones(String jewels, String stones) {
+        int res = 0;
+
+        for (int i=0; i<jewels.length(); i++) {
+            for (int j=0; j<stones.length(); j++) {
+                if (jewels.charAt(i) ==  stones.charAt(j)) {
+                    res++;
+                }
+            }
+        }
+        return res;
+    }
+}
+
+// Time Complexity: (m*n)
+// Space Complexity: O(1)
+ */
