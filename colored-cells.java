@@ -28,9 +28,13 @@ class Solution {
 // Time Complexity: O(1)
 // Space Complexity: O(1)
 
+
 /* 
+
 1, 5, 13, 25, …
 
-1 + 4(1 + 2 + 3 + ... + (n-1))
-1 + 4*n(n-1)/2
+turns into --> 1 + 4(1 + 2 + 3 + ... + (n-1))
+
+        1 + 4*n(n-1)/2
+
  */
