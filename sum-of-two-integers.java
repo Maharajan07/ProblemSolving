@@ -22,5 +22,16 @@ class Solution {
     }
 }
 
+/* 
+// recursive call
+
+class Solution {
+    public int getSum(int a, int b) {
+        if (b == 0) return a;
+        return getSum(a^b, (a&b) << 1);
+    }
+}
+ */
+
 // Time Complexity: O(1)
 // Space COmplexity: O(1)
