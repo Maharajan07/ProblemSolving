@@ -41,17 +41,15 @@ class MinStack {
     
     public void push(int val) {
         list.add(val);
-        if (minList.size() == 0) {
+        if (minList.size() == 0 || val <= minList.get(minList.size()-1)) {
             minList.add(val);
-        }
-        else {
-            int curMin = minList.get(minList.size()-1);
-            minList.add(Math.min(curMin, val));
         }
     }
     
     public void pop() {
-        minList.remove(minList.size()-1);
+        if (list.get(list.size()-1).equals(minList.get(minList.size()-1))) {
+            minList.remove(minList.size()-1);
+        }
         list.remove(list.size()-1);
     }
     
@@ -71,4 +69,14 @@ class MinStack {
  * obj.pop();
  * int param_3 = obj.top();
  * int param_4 = obj.getMin();
+ */
+
+/* 
+Time Complexities:
+    push() - O(1)
+    pop() - O(1)
+    top() - O(1)
+    getMin() - O(1)
+
+Space Complexity: O(n)
  */
