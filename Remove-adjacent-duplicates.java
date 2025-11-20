@@ -62,6 +62,27 @@ class Solution {
     }
 }
 
+
+// using Two-Pointers
+
+class Solution {
+    public String removeDuplicates(String s) {
+        char[] arr = s.toCharArray();
+        int j = 0;
+
+        for (int i=0; i<arr.length; i++) {
+            if (j > 0 && arr[j-1] == arr[i]) {
+                j--;
+            }
+            else {
+                arr[j] = arr[i];
+                j++;
+            }
+        }
+        return new String(arr, 0, j);
+    }
+}
+    
 // Time Complexity: O(n)
 // Space COmplexity: O(1)
  */
