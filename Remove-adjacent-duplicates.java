@@ -39,3 +39,29 @@ class Solution {
 
 // Time Complexity: O(n)
 // Space COmplexity: O(1)
+
+
+/* 
+// StringBuilder as a Stack
+
+class Solution {
+    public String removeDuplicates(String s) {
+        StringBuilder sb = new StringBuilder();
+
+        for (char c:s.toCharArray()) {
+            int n = sb.length();
+
+            if (n > 0 && sb.charAt(n-1) == c) {
+                sb.deleteCharAt(n-1);
+            }
+            else {
+                sb.append(c);
+            }
+        }
+        return sb.toString();
+    }
+}
+
+// Time Complexity: O(n)
+// Space COmplexity: O(1)
+ */
