@@ -46,5 +46,27 @@ class Solution {
     }
 }
 
+/* 
+class Solution {
+    public String removeStars(String s) {
+        char[] arr = s.toCharArray();
+        int ptr = 0;
+
+        for (char c:arr) {
+            if (c != '*') {
+                arr[ptr] = c;
+                ptr++;
+            }
+            else if (c == '*') {
+                if (ptr > 0) {
+                    ptr--;
+                }
+            }
+        }
+        return new String(arr, 0, ptr);
+    }
+}
+ */
+
 // Time Complexity: O(n)
 // Space Complexity: O(n)
