@@ -49,3 +49,52 @@ class Solution {
 
 // Time Complexity: O(m*n)
 // Space Complexity: O(1)
+
+
+/* 
+class Solution {
+    public List<Long> minOperations(int[] nums, int[] queries) {
+        Arrays.sort(nums);
+        int n = nums.length;
+
+        long[] pre = new long[n+1];
+        for (int i=0 ; i<n; i++) {
+            pre[i+1] = pre[i] + nums[i];
+        }
+
+        List<Long> res = new ArrayList<>();
+
+        for (int q:queries) {
+            int idx = upperBound(nums, q);
+
+            long leftCount = idx;
+            long rightCount = n - idx;
+
+            long sumLeft = pre[idx];
+            long sumRight = pre[n] - pre[idx];
+
+            long leftMoves = (q * leftCount) - sumLeft;
+            long rightMoves = sumRight - (q * rightCount);
+
+            res.add(leftMoves + rightMoves);
+        }
+        return res;
+    }
+
+    public int upperBound(int[] arr, int target) {
+        int l = 0;
+        int r = arr.length;
+
+        while (l < r) {
+            int mid = (l + r) / 2;
+
+            if (arr[mid] <= target) l = mid + 1;
+            else r = mid;
+        }
+        return l;
+    }
+}
+
+// Time Complexity: O(n log n)
+// Space Complexity: O(n) 
+ */
