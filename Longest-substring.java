@@ -38,3 +38,30 @@ class Solution {
 
 // Time Complexity: O(n)
 // Space Complexity: O(n)
+
+
+/* 
+// without using Set
+
+class Solution {
+    public int lengthOfLongestSubstring(String s) {
+        int[] last = new int[256];
+        Arrays.fill(last, -1);
+        int l = 0, max = 0;
+
+        for (int r=0; r<s.length(); r++) {
+            int c = s.charAt(r);
+
+            if (last[c] >= l) {
+                l = last[c] + 1;
+            }
+            last[c] = r;
+            max = Math.max(max, r-l+1);
+        }
+        return max;
+    }
+}
+
+// Time Complexity: O(n)
+// Space Complexity: O(1)
+ */
