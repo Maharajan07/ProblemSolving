@@ -46,3 +46,40 @@ class Solution {
 
 // Time Complexity: O(n)
 // Space Complexity: O(1)
+
+
+/* 
+// using queue
+
+class Solution {
+    public int timeRequiredToBuy(int[] tickets, int k) {
+        Queue<int[]> q = new LinkedList<>();
+        
+        for (int i=0; i<tickets.length; i++) {
+            q.add(new int[] {tickets[i], i});
+        }
+
+        int time = 0;
+
+        while (!q.isEmpty()) {
+            int[] cur = q.poll();
+            int t = cur[0];
+            int idx = cur[1];
+
+            t--;
+            time++;
+
+            if (idx == k && t == 0) {
+                return time;
+            }
+            if (t > 0) {
+                q.add(new int[] {t, idx});
+            }
+        }
+        return time;
+    }
+}
+
+// Time Complexity: O(n * m)
+// Space Complexity: O(n)
+ */
