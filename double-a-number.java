@@ -54,3 +54,45 @@ class Solution {
 
 // Time Complexity: O(n)
 // Space Complexity: O(n)
+
+/* 
+// without using stack
+
+class Solution {
+    public ListNode doubleIt(ListNode head) {
+        head = reverse(head);
+
+        ListNode temp = head;
+        ListNode prev = null;
+        int carry = 0;
+
+        while (temp != null) {
+            int total = (temp.val)*2 + carry;
+            temp.val = total%10;
+            carry = total/10;
+            prev = temp;
+            temp = temp.next;
+        }
+        if (carry > 0) {
+            prev.next = new ListNode(carry);
+        }
+        return reverse(head);
+    }
+    public ListNode reverse(ListNode head) {
+        ListNode prev = null;
+        ListNode current = head;
+        ListNode next = null;
+
+        while (current != null) {
+            next = current.next;
+            current.next = prev;
+            prev = current;
+            current = next;
+        }
+        return prev;
+    }
+}
+
+// Time Complexity: O(n)
+// Space Complexity: O(1)
+ */
