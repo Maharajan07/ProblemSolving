@@ -33,6 +33,33 @@ No node has value 5. */
  */
 class Solution {
     public ListNode modifiedList(int[] nums, ListNode head) {
+        HashSet<Integer> set = new HashSet<>();
+
+        for (int n:nums) {
+            set.add(n);
+        }
+        while (head != null && set.contains(head.val)) {
+            head = head.next;
+        }
+        ListNode temp = head;
+        while (temp != null && temp.next != null) {
+            if (set.contains(temp.next.val)) {
+                temp.next = temp.next.next;
+            }
+            else {
+                temp = temp.next;
+            }
+        }
+        return head;
+    }
+}
+
+// Time Complexity: O(m+n)
+// Space Complexity: O(m)
+
+/*
+class Solution {
+    public ListNode modifiedList(int[] nums, ListNode head) {
 
         for (int n:nums) {
             while (head != null && head.val == n) {
@@ -55,3 +82,4 @@ class Solution {
 
 // Time Complexity: O(m*n)
 // Space Complexity: O(1)
+/*
