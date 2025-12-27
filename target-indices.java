@@ -24,7 +24,31 @@ Output: [4]
 Explanation: After sorting, nums is [1,2,2,3,5].
 The index where nums[i] == 5 is 4. */
 
+class Solution {
+    public List<Integer> targetIndices(int[] nums, int target) {
+        ArrayList<Integer> list = new ArrayList<>();
 
+        int less = 0;
+        int equal = 0;
+
+        for (int num:nums) {
+            if (num < target) less++;
+            else if (num == target) equal++;
+        }
+
+        for (int i=0; i<equal; i++) {
+            list.add(less + i);
+        }
+        
+        return list;
+    }
+}
+
+// Time Complexity: O(n)
+// Space Complexity: O(k)
+
+
+/* 
 class Solution {
     public List<Integer> targetIndices(int[] nums, int target) {
         ArrayList<Integer> list  = new ArrayList<>();
@@ -39,3 +63,4 @@ class Solution {
 
 // Time Complexity: O(n log n)
 // Space Complexity: O(k)
+ */
