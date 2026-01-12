@@ -26,9 +26,32 @@ class Solution {
         if (n == 0) return 0;
         if (n == 1) return 1;
 
+        int prev1 = 0;
+        int prev2 = 1;
+
+        for (int i=2; i<=n; i++) {
+            int cur = prev1 + prev2;
+            prev1 = prev2;
+            prev2 = cur;
+        }
+        return prev2;
+    }
+}
+
+// Time Complexity: O(n)
+// Space Complexity: O(1)
+
+
+/* 
+class Solution {
+    public int fib(int n) {
+        if (n == 0) return 0;
+        if (n == 1) return 1;
+
         return fib(n-1) + fib(n-2);
     }
 }
 
 // Time Complexity: O(2^n)
 // Space Complexity: O(n)
+ */
