@@ -40,5 +40,21 @@ class Solution {
     }
 }
 
+/* 
+class Solution {
+    public String truncateSentence(String s, int k) {
+        String[] words = s.split(" ");
+        String res = "";
+
+        for (int i=0; i<k; i++) {
+            res += words[i];
+            if (i < k-1) res += " ";
+        }
+
+        return res;
+    }
+}
+ */
+
 // Time Complexity: O(n)
 // Space Complexity: O(n)
