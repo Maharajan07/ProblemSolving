@@ -21,14 +21,12 @@ rotate 2 steps to the right: [3,99,-1,-100] */
 class Solution {
     public void rotate(int[] nums, int k) {
         int n = nums.length;
-        if (n <= 1) return;
 
-        k = k % n;
-        if (k == 0) return;
+        k = k % n;  // handle cases where k >= n
 
-        reverse(nums, 0, n-1);  // whole array reverse
-        reverse(nums, 0, k-1);  // first k elements reverse
-        reverse(nums, k, n-1);  // remaining n-k elements reverse
+        reverse(nums, 0, n-1);  // reverse the whole array
+        reverse(nums, 0, k-1);  // reverse first k elements
+        reverse(nums, k, n-1);  // reverse the rest n-k elements
     }
     private void reverse(int[] nums, int left, int right) {
         while (left < right) {
