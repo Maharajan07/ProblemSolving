@@ -45,7 +45,7 @@ class Solution {
 
 
 /* 
-// alternative approach
+// alternative approach (index-math based)
 class Solution {
     public void rotate(int[] nums, int k) {
         int n = nums.length;
