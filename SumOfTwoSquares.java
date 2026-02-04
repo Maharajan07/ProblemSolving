@@ -12,6 +12,36 @@ Input: c = 3
 Output: false */
 
 
+class Solution {
+    public boolean judgeSquareSum(int c) {
+        int left = 0;
+        int right = sqrt(c);
+
+        while (left <= right) {
+            long sum = (long) left*left + (long) right*right;
+            if (sum == c) return true;
+            else if (sum < c) left++;
+            else right--;
+        }
+        return false;
+    }
+    private int sqrt(int c) {
+        int low = 0;
+        int high = c;
+
+        while (low <= high) {
+            int mid = low + (high-low) / 2;
+            long sqr = (long) mid * mid;
+
+            if  (sqr == c) return mid;
+            else if (sqr < c) low = mid+1;
+            else high = mid-1;
+        }
+        return high;
+    }
+}
+
+/* 
 public class SumOfTwoSquares {
     public boolean judgeSquareSum(int c) {
         int left = 0;
@@ -27,6 +57,7 @@ public class SumOfTwoSquares {
         return false;
     }
 }
+ */
 
 /*
 // using Math Formula (a² + b² = c)
