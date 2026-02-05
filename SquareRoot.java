@@ -20,16 +20,16 @@ Constraints:
 0 <= x <= 231 - 1 */
 
 
-class SquareRoot {
+class Solution {
     public int mySqrt(int x) {
         int start = 1;
         int end = x;
         int ans = 0;
 
         while (start <= end) {
-            int mid = (start + end)/2;
+            int mid = start + (end-start) / 2;
             
-            if (mid*mid <= x) {
+            if ((long) mid*mid <= x) {
                 ans = mid;
                 start = mid + 1;
             } else {
@@ -40,5 +40,5 @@ class SquareRoot {
     }
 }
 
-// Time Complexity: O(log x)
+// Time Complexity: O(log n)
 // Space Complexity: O(1)
