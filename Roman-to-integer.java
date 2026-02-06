@@ -41,6 +41,25 @@ Explanation: M = 1000, CM = 900, XC = 90 and IV = 4. */
 
 
 class Solution {
+
+    // public int romanToInt(String s) {
+    //    int sum = 0;
+    //    int prev = 0;
+
+    //    for (int i=s.length()-1; i>=0; i--) {
+    //         int cur = value(s.charAt(i));
+
+    //         if (cur < prev) {
+    //             sum -= cur;
+    //         }
+    //         else {
+    //             sum += cur;
+    //         }
+    //         prev = cur;
+    //    } 
+    //    return sum;
+    // }
+
     public int romanToInt(String s) {
        int sum = 0;
 
@@ -71,6 +90,7 @@ class Solution {
 // Space Complexity: O(1)
 
 /* 
+// using HashMap
 class Solution {
     public int romanToInt(String s) {
         Map<Character, Integer> map = new HashMap<>();
