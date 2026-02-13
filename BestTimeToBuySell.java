@@ -21,6 +21,7 @@ Constraints:
 1 <= prices.length <= 105
 0 <= prices[i] <= 104 */
 
+
 class BestTimeToBuySell {
     public int maxProfit(int[] prices) {
         int minPrice = Integer.MAX_VALUE;
