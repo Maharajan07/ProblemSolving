@@ -17,6 +17,37 @@ Output: 1 */
 
 class Solution {
     public int hIndex(int[] citations) {
+        int n = citations.length;
+        int[] count = new int[n+1];
+
+        for (int citation:citations) {
+            if (citation >= n) {
+                count[n]++;
+            }
+            else {
+                count[citation]++;
+            }
+        }
+
+        int total = 0;
+        for (int i=n; i>=0; i--) {
+            total += count[i]; 
+            
+            if (total >= i) return i;
+        }
+
+        return 0;
+    }
+}
+
+// Time Complexity: O(n)
+// Space Complexity: O(n)
+
+
+/* 
+// Sorting Solution
+class Solution {
+    public int hIndex(int[] citations) {
         Arrays.sort(citations);
         int n = citations.length;
 
@@ -31,3 +62,4 @@ class Solution {
 
 // Time Complexity: O(n log n) due to sorting
 // Space Complexity: O(1) if we ignore the space used by sorting, otherwise O(n) due to sorting
+ */
