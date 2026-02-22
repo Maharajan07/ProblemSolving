@@ -20,6 +20,27 @@ Constraints:
 The input is generated such that answer[i] is guaranteed to fit in a 32-bit integer. */
 
 
+class Solution {
+    public int[] productExceptSelf(int[] nums) {
+        int n = nums.length;
+        int[] ans = new int[n];
+
+        ans[0] = 1;
+        for (int i=1; i<n; i++) {
+            ans[i] = ans[i-1] * nums[i-1];  // ans[i] is the product of all the elements to the left of i
+        }
+
+        int right = 1;
+        for (int i=n-1; i>=0; i--) {
+            ans[i] *= right;
+            right *= nums[i];   // right is the product of all the elements to the right of i
+        }
+
+        return ans;
+    }
+}
+
+/* 
 class productExceptSelf {
     public int[] productExceptSelf(int[] nums) {
         int n = nums.length;
@@ -29,13 +50,13 @@ class productExceptSelf {
             res[i] = 1;
         }
 
-        int left = 1;
+        int left = 1;               // left is the product of all the elements to the left of i
         for (int i=0; i<n; i++) {
             res[i] *= left;
             left *= nums[i];
         }
-        
-        int right = 1;
+            
+        int right = 1;              // right is the product of all the elements to the right of i
         for (int i=n-1; i>=0; i--) {
             res[i] *= right;
             right *= nums[i];
@@ -43,9 +64,11 @@ class productExceptSelf {
         return res;
     }
 }
+ */
 
 // Time Complexity: O(n)
 // Space Complexity: O(1)
+
 
 /* // Brute-force solution O(n²) Time
 
