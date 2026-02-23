@@ -25,13 +25,13 @@ class Solution {
         int max = 0;
 
         while (left < right) {
-            int w = right - left;
-            int h = Math.min(height[right], height[left]);
+            int w = right - left;   // width of the container is determined by the distance between the two lines
+            int h = Math.min(height[right], height[left]);  // height of the container is determined by the shorter line
 
             int area = w*h;
             max = Math.max(max, area);
 
-            if (height[left] < height[right]) {
+            if (height[left] < height[right]) {     // move the pointer of the shorter line towards the center, in hope of finding a taller line that can increase the area
                 left++;
             }
             else {
