@@ -34,30 +34,19 @@ class Solution {
         for (int i=0; i<words.length; i++) {
             String word = words[i];
             String newWord = "";
-
-            if (word.length() > 2) {
-                for (int j=0; j<word.length(); j++) {
-                    char ch = word.charAt(j);
-                    
-                    if (ch >= 'a' && ch <= 'z' && j == 0) {
-                        ch = (char) (ch - 32);
-                    }
-                    else if (ch >= 'A' && ch <= 'Z' && j != 0) {
-                        ch = (char) (ch + 32);
-                    }
-                    newWord += ch;
+            
+            for (int j=0; j<word.length(); j++) {
+                char ch = word.charAt(j);
+                if (word.length() > 2) {
+                    if (j == 0 && ch >= 'a' && ch <= 'z') ch -= 32;
+                    if (j != 0 && ch >= 'A' && ch <= 'Z') ch += 32;
                 }
-            }
-            else {
-                for (int j=0; j<word.length(); j++) {
-                    char ch = word.charAt(j);
-                    if (ch >= 'A' && ch <= 'Z') {
-                        ch = (char) (ch + 32);
-                    }
-                    newWord += ch;
+                else {
+                    if (ch >= 'A' && ch <= 'Z') ch += 32;
                 }
+                newWord += ch;
             }
-            words[i] = newWord;
+        words[i] = newWord;
         }
         return String.join(" ", words);
     }
