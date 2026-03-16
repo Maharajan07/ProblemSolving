@@ -25,6 +25,19 @@ The only letter that appears twice is 'd' so we return 'd'. */
 
 class Solution {
     public char repeatedCharacter(String s) {
+        Set<Character> set = new HashSet<>();
+
+        for (char ch:s.toCharArray()) {
+            if (!set.add(ch)) return ch;
+        }
+        return ' ';
+    }
+}
+
+
+/* 
+class Solution {
+    public char repeatedCharacter(String s) {
         int[] freq = new int[26];
 
         for (int i=0; i<s.length(); i++) {
@@ -38,6 +51,7 @@ class Solution {
         return ' ';
     }
 }
+ */
 
 // Time Complexity: O(n)
 // Space Complexity: O(1)
