@@ -18,6 +18,24 @@ Example 3:
 Input: n = 3
 Output: false */
 
+
+class Solution {
+    public boolean isPowerOfTwo(int n) {
+        if (n <= 0) return false;
+
+        while (n%2 == 0) {
+            n /= 2;
+        }
+
+        return n == 1;
+    }
+}
+
+// Time Complexity: O(log n)
+// Space Complexity: O(1)
+
+
+/* 
 class PowerOfTwo {
     public boolean isPowerOfTwo(int n) {
         if (n <= 0) return false;
@@ -30,6 +48,10 @@ class PowerOfTwo {
         return false;
     }
 }
+
+// Time Complexity: O(log n)
+// Space Complexity: O(1)
+*/
 
 
 /*
