@@ -17,16 +17,21 @@ Explanation: The common factors of 25 and 30 are 1, 5. */
 
 class Solution {
     public int commonFactors(int a, int b) {
-        int n = a > b ? b : a;
-        int count = 0;
 
-        for (int i=1; i<=n; i++) {
-            if (a%i == 0 && b%i == 0) count++;
+        while (b != 0) {    // Euclidean algorithm to find gcd(a,b)
+            int temp = b;
+            b =  a%b;
+            a = temp;
+        }
+
+        int count = 0;
+        for (int i=1; i<=a; i++) {  // 'a' is now gcd(a,b)
+            if (a%i == 0) count++;  // count the number of factors of 'a'
         }
 
         return count;
     }
 }
 
-// Time Complexity: O(n)
+// Time Complexity: O(log(gcd(a,b)) + sqrt(gcd(a,b)))
 // Space Complexity: O(1)
