@@ -61,3 +61,29 @@ class Solution {
 
 // Time Complexity: O(n*m) where n is the length of words and m is the average length of each word
 // Space Complexity: O(1)
+
+
+/* 
+class Solution {
+    public List<String> removeAnagrams(String[] words) {
+        List<String> res = new ArrayList<>();
+
+        String prevKey = "";
+
+        for (String word:words) {
+            char[] arr = word.toCharArray();
+            Arrays.sort(arr);
+            String key = new String(arr);
+
+            if (!key.equals(prevKey)) {
+                res.add(word);
+                prevKey = key;
+            }
+        }
+        return res;
+    }
+}
+
+// Time Complexity: O(n*m*log(m)) where n is the length of words and m is the average length of each word
+// Space Complexity: O(n*m) where n is the length of words and m is the average length of each word
+ */
